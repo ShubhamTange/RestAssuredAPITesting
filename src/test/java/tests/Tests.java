@@ -24,6 +24,7 @@ public class Tests {
 	@BeforeClass
 	public void init() {
 		help = new Helper();
+		
 	}
 
 	@Test(priority = 1)
