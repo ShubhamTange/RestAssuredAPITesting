@@ -24,7 +24,7 @@ public class Tests {
 	@BeforeClass
 	public void init() {
 		help = new Helper();
-		System.out.println("RestAssured Test Started...");
+		System.out.println("RestAssured Test ...");
 	}
 
 	@Test(priority = 1)
