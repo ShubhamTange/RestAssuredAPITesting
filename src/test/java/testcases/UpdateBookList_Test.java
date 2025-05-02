@@ -1,6 +1,8 @@
-package tests;
+package testcases;
 
 import static org.testng.Assert.assertEquals;
+
+import java.util.Random;
 
 import org.apache.http.HttpStatus;
 import org.testng.annotations.BeforeClass;
@@ -10,34 +12,34 @@ import com.restassured.helper.Helper;
 
 import io.restassured.response.Response;
 
-public class Tests {
+public class UpdateBookList_Test {
 	private Helper help;
-
-//	help.userRegistration("SHuham_m51", "Shubham@123");
-//	help.generateToken("SHuham_m51", "Shubham@123");
-//	help.getAllBooks();
-//	help.getBookByISBN();
-//	help.addListOfBooks();
-//	help.updateBookList();
-//	help.deleteBooks();
-//	System.out.println("Finished Successfully...");
+	String username ="";
+	String password = "Shubham@15";
 	@BeforeClass
-	public void init() {
+	public  void init() {
 		help = new Helper();
+		username = new Random().ints(8, 0, 62)
+			    .mapToObj(i -> "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".charAt(i))
+			    .collect(StringBuilder::new, StringBuilder::append, StringBuilder::append)
+			    .toString();
+		
 		System.out.println("RestAssured Test ...");
+		System.out.println("Username: "+ username + ", Password: "+ password);
 	}
 
 	@Test(priority = 1)
 	public void testUserRegistration() {
 
-		Response response = help.userRegistration("SHuham_m651", "Shubham@15");
+		Response response = help.userRegistration(username, password);
 		System.out.println("Status Code: "+response.getStatusCode());
 		assertEquals(HttpStatus.SC_CREATED, response.getStatusCode());
 	}
-
+	
+	
 	@Test(priority = 2)
 	public void testGenerateToken() {
-		Response response = help.generateToken("SHuham_m65", "Shubham@15");
+		Response response = help.generateToken(username, password);
 		System.out.println("Status Code: "+response.getStatusCode());
 		System.out.println("USER ID: "+help.userID);
 		assertEquals(HttpStatus.SC_OK, response.getStatusCode());
@@ -52,33 +54,17 @@ public class Tests {
 	}
 
 	@Test(priority = 4)
-	public void testGetBookByISBN() {
-		Response response = help.getBookByISBN();
-		System.out.println("Status Code: "+response.getStatusCode());
-		assertEquals(HttpStatus.SC_OK, response.getStatusCode());
-	}
-
-	@Test(priority = 5)
 	public void testAddListOfBooks() {
 		Response response = help.addListOfBooks();
 
 		assertEquals(HttpStatus.SC_CREATED, response.getStatusCode());
 
 	}
-
-	@Test(priority = 6)
+	@Test(priority = 5)
 	public void testUpdateBookList() {
 
 		Response response = help.updateBookList();
 		System.out.println("Status Code: "+response.getStatusCode());
 		assertEquals(HttpStatus.SC_OK, response.getStatusCode());
-	}
-
-	@Test(priority = 7)
-	public void deleteBook() {
-
-		Response response = help.deleteBooks();
-		System.out.println("Status Code: "+response.getStatusCode());
-		assertEquals(HttpStatus.SC_NO_CONTENT, response.getStatusCode());
 	}
 }

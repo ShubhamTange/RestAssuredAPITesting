@@ -1,0 +1,250 @@
+<html>
+<head>
+<title>TestNG:  Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>34/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri May 02 21:41:45 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>38 seconds (38153 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.GenerateToken_Test.testGenerateToken()'><b>testGenerateToken</b><br>Test class: tests.GenerateToken_Test</td>
+<td></td>
+<td>1</td>
+<td>tests.GenerateToken_Test@7b4c50bc</td></tr>
+<tr>
+<td title='tests.GetBookByISBN_Test.testGenerateToken()'><b>testGenerateToken</b><br>Test class: tests.GetBookByISBN_Test</td>
+<td></td>
+<td>1</td>
+<td>tests.GetBookByISBN_Test@50378a4</td></tr>
+<tr>
+<td title='tests.UserRegistration_Test.testUserAlreadyExists()'><b>testUserAlreadyExists</b><br>Test class: tests.UserRegistration_Test</td>
+<td></td>
+<td>1</td>
+<td>tests.UserRegistration_Test@69c81773</td></tr>
+<tr>
+<td title='tests.DeleteBookByISBN_Test.testUserRegistration()'><b>testUserRegistration</b><br>Test class: tests.DeleteBookByISBN_Test</td>
+<td></td>
+<td>1</td>
+<td>tests.DeleteBookByISBN_Test@491b9b8</td></tr>
+<tr>
+<td title='tests.DeleteBookByISBN_Test.testUpdateBookList()'><b>testUpdateBookList</b><br>Test class: tests.DeleteBookByISBN_Test</td>
+<td></td>
+<td>0</td>
+<td>tests.DeleteBookByISBN_Test@491b9b8</td></tr>
+<tr>
+<td title='tests.DeleteBookByISBN_Test.testGenerateToken()'><b>testGenerateToken</b><br>Test class: tests.DeleteBookByISBN_Test</td>
+<td></td>
+<td>1</td>
+<td>tests.DeleteBookByISBN_Test@491b9b8</td></tr>
+<tr>
+<td title='tests.AddListOfBooks_Test.testGetAllBooks()'><b>testGetAllBooks</b><br>Test class: tests.AddListOfBooks_Test</td>
+<td></td>
+<td>0</td>
+<td>tests.AddListOfBooks_Test@60f00693</td></tr>
+<tr>
+<td title='tests.Tests.testAddListOfBooks()'><b>testAddListOfBooks</b><br>Test class: tests.Tests</td>
+<td></td>
+<td>0</td>
+<td>tests.Tests@1a4927d6</td></tr>
+<tr>
+<td title='tests.Tests.testUserAlreadyExists()'><b>testUserAlreadyExists</b><br>Test class: tests.Tests</td>
+<td></td>
+<td>1</td>
+<td>tests.Tests@1a4927d6</td></tr>
+<tr>
+<td title='tests.Tests.testUserRegistration()'><b>testUserRegistration</b><br>Test class: tests.Tests</td>
+<td></td>
+<td>1</td>
+<td>tests.Tests@1a4927d6</td></tr>
+<tr>
+<td title='tests.UpdateBookList_Test.testUpdateBookList()'><b>testUpdateBookList</b><br>Test class: tests.UpdateBookList_Test</td>
+<td></td>
+<td>1</td>
+<td>tests.UpdateBookList_Test@79207381</td></tr>
+<tr>
+<td title='tests.UpdateBookList_Test.testGenerateToken()'><b>testGenerateToken</b><br>Test class: tests.UpdateBookList_Test</td>
+<td></td>
+<td>1</td>
+<td>tests.UpdateBookList_Test@79207381</td></tr>
+<tr>
+<td title='tests.GetBookByISBN_Test.testGetAllBooks()'><b>testGetAllBooks</b><br>Test class: tests.GetBookByISBN_Test</td>
+<td></td>
+<td>0</td>
+<td>tests.GetBookByISBN_Test@50378a4</td></tr>
+<tr>
+<td title='tests.UpdateBookList_Test.testUserRegistration()'><b>testUserRegistration</b><br>Test class: tests.UpdateBookList_Test</td>
+<td></td>
+<td>1</td>
+<td>tests.UpdateBookList_Test@79207381</td></tr>
+<tr>
+<td title='tests.GetAllBooks_Test.testGetAllBooks()'><b>testGetAllBooks</b><br>Test class: tests.GetAllBooks_Test</td>
+<td></td>
+<td>1</td>
+<td>tests.GetAllBooks_Test@5884a914</td></tr>
+<tr>
+<td title='tests.DeleteBookByISBN_Test.testAddListOfBooks()'><b>testAddListOfBooks</b><br>Test class: tests.DeleteBookByISBN_Test</td>
+<td></td>
+<td>0</td>
+<td>tests.DeleteBookByISBN_Test@491b9b8</td></tr>
+<tr>
+<td title='tests.AddListOfBooks_Test.testGenerateToken()'><b>testGenerateToken</b><br>Test class: tests.AddListOfBooks_Test</td>
+<td></td>
+<td>1</td>
+<td>tests.AddListOfBooks_Test@60f00693</td></tr>
+<tr>
+<td title='tests.UpdateBookList_Test.testGetAllBooks()'><b>testGetAllBooks</b><br>Test class: tests.UpdateBookList_Test</td>
+<td></td>
+<td>0</td>
+<td>tests.UpdateBookList_Test@79207381</td></tr>
+<tr>
+<td title='tests.UpdateBookList_Test.testAddListOfBooks()'><b>testAddListOfBooks</b><br>Test class: tests.UpdateBookList_Test</td>
+<td></td>
+<td>0</td>
+<td>tests.UpdateBookList_Test@79207381</td></tr>
+<tr>
+<td title='tests.GenerateToken_Test.testUserRegistration()'><b>testUserRegistration</b><br>Test class: tests.GenerateToken_Test</td>
+<td></td>
+<td>0</td>
+<td>tests.GenerateToken_Test@7b4c50bc</td></tr>
+<tr>
+<td title='tests.GetAllBooks_Test.testUserRegistration()'><b>testUserRegistration</b><br>Test class: tests.GetAllBooks_Test</td>
+<td></td>
+<td>1</td>
+<td>tests.GetAllBooks_Test@5884a914</td></tr>
+<tr>
+<td title='tests.GetBookByISBN_Test.testGetBookByISBN()'><b>testGetBookByISBN</b><br>Test class: tests.GetBookByISBN_Test</td>
+<td></td>
+<td>0</td>
+<td>tests.GetBookByISBN_Test@50378a4</td></tr>
+<tr>
+<td title='tests.Tests.testGetBookByISBN()'><b>testGetBookByISBN</b><br>Test class: tests.Tests</td>
+<td></td>
+<td>0</td>
+<td>tests.Tests@1a4927d6</td></tr>
+<tr>
+<td title='tests.AddListOfBooks_Test.testUserRegistration()'><b>testUserRegistration</b><br>Test class: tests.AddListOfBooks_Test</td>
+<td></td>
+<td>1</td>
+<td>tests.AddListOfBooks_Test@60f00693</td></tr>
+<tr>
+<td title='tests.Tests.testGenerateToken()'><b>testGenerateToken</b><br>Test class: tests.Tests</td>
+<td></td>
+<td>1</td>
+<td>tests.Tests@1a4927d6</td></tr>
+<tr>
+<td title='tests.DeleteBookByISBN_Test.testGetAllBooks()'><b>testGetAllBooks</b><br>Test class: tests.DeleteBookByISBN_Test</td>
+<td></td>
+<td>0</td>
+<td>tests.DeleteBookByISBN_Test@491b9b8</td></tr>
+<tr>
+<td title='tests.DeleteBookByISBN_Test.deleteBook()'><b>deleteBook</b><br>Test class: tests.DeleteBookByISBN_Test</td>
+<td></td>
+<td>0</td>
+<td>tests.DeleteBookByISBN_Test@491b9b8</td></tr>
+<tr>
+<td title='tests.AddListOfBooks_Test.testAddListOfBooks()'><b>testAddListOfBooks</b><br>Test class: tests.AddListOfBooks_Test</td>
+<td></td>
+<td>1</td>
+<td>tests.AddListOfBooks_Test@60f00693</td></tr>
+<tr>
+<td title='tests.GetAllBooks_Test.testGenerateToken()'><b>testGenerateToken</b><br>Test class: tests.GetAllBooks_Test</td>
+<td></td>
+<td>1</td>
+<td>tests.GetAllBooks_Test@5884a914</td></tr>
+<tr>
+<td title='tests.GetBookByISBN_Test.testUserRegistration()'><b>testUserRegistration</b><br>Test class: tests.GetBookByISBN_Test</td>
+<td></td>
+<td>1</td>
+<td>tests.GetBookByISBN_Test@50378a4</td></tr>
+<tr>
+<td title='tests.Tests.testGetAllBooks()'><b>testGetAllBooks</b><br>Test class: tests.Tests</td>
+<td></td>
+<td>0</td>
+<td>tests.Tests@1a4927d6</td></tr>
+<tr>
+<td title='tests.UserRegistration_Test.testUserRegistration()'><b>testUserRegistration</b><br>Test class: tests.UserRegistration_Test</td>
+<td></td>
+<td>2</td>
+<td>tests.UserRegistration_Test@69c81773</td></tr>
+<tr>
+<td title='tests.Tests.testUpdateBookList()'><b>testUpdateBookList</b><br>Test class: tests.Tests</td>
+<td></td>
+<td>1</td>
+<td>tests.Tests@1a4927d6</td></tr>
+<tr>
+<td title='tests.Tests.deleteBook()'><b>deleteBook</b><br>Test class: tests.Tests</td>
+<td></td>
+<td>1</td>
+<td>tests.Tests@1a4927d6</td></tr>
+</table><p>
+</body>
+</html>

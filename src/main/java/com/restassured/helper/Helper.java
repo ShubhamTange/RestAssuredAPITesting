@@ -16,6 +16,7 @@ public class Helper {
 	public static String ISBN1 = "";
 	public static String ISBN2 = "";
 	public static String ISBN3 = "";
+
 	public Helper() {
 		RestAssured.baseURI = "https://bookstore.toolsqa.com/";
 
@@ -23,7 +24,7 @@ public class Helper {
 
 	public Response userRegistration(String username, String password) {
 		System.out.println("========================= A. User Registration  ==========================");
-		
+
 		JSONObject request = new JSONObject();
 		request.put("userName", username);
 		request.put("password", password);
@@ -50,10 +51,11 @@ public class Helper {
 		request.put("userName", username);
 		request.put("password", password);
 
-		Response resp = RestAssured.given().contentType(ContentType.JSON).body(request).post("Account/V1/GenerateToken").andReturn();
+		Response resp = RestAssured.given().contentType(ContentType.JSON).body(request).post("Account/V1/GenerateToken")
+				.andReturn();
 
 		token = resp.jsonPath().getString("token");
-		System.out.println("token: ll "+ token);
+		System.out.println("token: ll " + token);
 		System.out.println("Response Body : " + resp.getBody().asString());
 
 		return resp;
@@ -78,10 +80,7 @@ public class Helper {
 
 	public Response getBookByISBN() {
 		System.out.println("========================= D. Get Book By ISBN  ==========================");
-		Response resp = RestAssured
-				.given().contentType(ContentType.JSON)
-				.queryParam("ISBN", ISBN1)
-				.when()
+		Response resp = RestAssured.given().contentType(ContentType.JSON).queryParam("ISBN", ISBN1).when()
 				.get(EndPoints.GET_BOOKSBYISBN).andReturn();
 
 		System.out.println("Response Body : " + resp.getBody().asPrettyString());
@@ -90,53 +89,45 @@ public class Helper {
 
 	}
 
-
 	public Response addListOfBooks() {
 		System.out.println("========================= E. add List Of Books ==========================");
 		JSONObject request = new JSONObject();
 		request.put("userId", userID);
-		
-		
+
 		JSONArray collectionOfIsbns = new JSONArray();
 		JSONObject isbnObject = new JSONObject();
-        isbnObject.put("isbn", ISBN1);
-        collectionOfIsbns.add(isbnObject);
-        
-        request.put("collectionOfIsbns", collectionOfIsbns);
-		
-        System.out.println("Request : " + request);
-		Response resp = RestAssured
-				.given().contentType(ContentType.JSON)
-				.header("Authorization","Bearer " +token)
-				.body(request)
-				.post(EndPoints.ADD_LISTOFBOOKS);
+		isbnObject.put("isbn", ISBN1);
+		collectionOfIsbns.add(isbnObject);
+
+		request.put("collectionOfIsbns", collectionOfIsbns);
+
+		System.out.println("Request : " + request);
+		Response resp = RestAssured.given().contentType(ContentType.JSON).header("Authorization", "Bearer " + token)
+				.body(request).post(EndPoints.ADD_LISTOFBOOKS);
 
 		System.out.println("Response Body : " + resp.getBody().asPrettyString());
 		System.out.println("Status Code : " + resp.getStatusCode());
 		return resp;
-		
+
 	}
-	
-public Response updateBookList() {
-		
+
+	public Response updateBookList() {
+
 		System.out.println("========================= F. update Book List  ==========================");
 		JSONObject request = new JSONObject();
 		request.put("userId", userID);
 		request.put("isbn", ISBN3);
 		System.out.println(request);
-		
-		Response resp = RestAssured
-				.given().contentType(ContentType.JSON).header("Authorization","Bearer " +token)
-				.pathParam("ISBN", ISBN1)
-				.body(request)
-				.put(EndPoints.UPDATE_BOOKLIST);
+
+		Response resp = RestAssured.given().contentType(ContentType.JSON).header("Authorization", "Bearer " + token)
+				.pathParam("ISBN", ISBN1).body(request).put(EndPoints.UPDATE_BOOKLIST);
 
 		System.out.println("Response Body : " + resp.getBody().asPrettyString());
 		System.out.println("Status Code : " + resp.getStatusCode());
 		return resp;
 
 	}
-	
+
 	public Response deleteBooks() {
 		System.out.println("========================= H. Delete Book ==========================");
 		JSONObject request = new JSONObject();
@@ -156,7 +147,6 @@ public Response updateBookList() {
 
 	}
 
-	
 	public static void main(String[] args) {
 		Helper help = new Helper();
 		help.userRegistration("SHuham_m66", "Shubham@123");
